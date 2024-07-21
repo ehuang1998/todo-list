@@ -1,15 +1,13 @@
 import './styles.css';
-import selectLink from './domHelper';
+import dom from './domHelper';
+import './project.js';
 
-const home = document.querySelector('.home');
-
-home.classList.add('selected-menu');
+dom.displayHome();
 
 document.addEventListener('click', (event) => {
     const { target } = event;
-    console.log(target);
 
     if (target.classList.contains('menu-item')) {
-        selectLink(target);
+        dom.selectLink(target);
     }
 })

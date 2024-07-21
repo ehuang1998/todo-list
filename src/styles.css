@@ -23,14 +23,18 @@ a {
     display: flex;
     text-decoration: none;
     color: var(--main-font-color);
+    border: 1px solid var(--side-bar-color);
     font-size: 20px;
     gap: 10px;
 }
 
-a:hover {
-    background-color: var(--selected-background);
+a:not(.selected-link):hover {
+    border: 1px solid var(--selected-color);
     border-radius: 20px;
+    transition: .3s;
 }
+
+
 
 .side-bar-header {
     display: flex; 
@@ -62,6 +66,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     padding-top: 30px;
+    font-weight: 300;
 }
 
 #user-name {
@@ -82,4 +87,13 @@ a:hover {
     color: var(--selected-color);
     background-color: var(--selected-background);
     border-radius: 20px;
+}
+
+.main-content {
+    padding: 75px;
+}
+
+.main-page-title {
+    font-weight: 500;
+    font-size: 1.75em;
 }

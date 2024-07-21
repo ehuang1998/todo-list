@@ -1,4 +1,5 @@
-export default function selectLink(target) {
+import './project.js'
+function selectLink(target) {
     
     const allMenuItems = document.querySelectorAll('.menu-item')
 
@@ -8,3 +9,14 @@ export default function selectLink(target) {
 
     target.classList.add('selected-menu');
 }
+
+function displayHome() {
+
+    const home = document.querySelector('.home');
+
+    home.classList.add('selected-menu');
+
+
+}
+
+export default {selectLink, displayHome};
