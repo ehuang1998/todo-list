@@ -77,7 +77,7 @@ a:not(.selected-link):hover {
 
 #page-content {
     display: grid;
-    grid-template-columns: 0.60fr 2fr;
+    grid-template-columns: 0.70fr 2fr;
 }
 
 .menu-item {

@@ -1,7 +1,8 @@
 let projectList = [];
 
-projectsList = [
+projectList = [
     {
+        id: 1,
       name: 'User Data Collection Improvements',
       tasks: [
         {
@@ -15,6 +16,7 @@ projectsList = [
       ]
     },
     {
+        id: 2,
       name: 'Shop Drawing Web Application',
       tasks: [
         {
@@ -27,7 +29,7 @@ projectsList = [
         }
       ]
     },
-  ];
+];
 
 class Project {
 
@@ -54,7 +56,7 @@ function deleteProject(id) {
     if (id > -1) {
         projectList.splice(id-1, 1);
     }
-}
+}   
 
 
-
+export default projectList;
