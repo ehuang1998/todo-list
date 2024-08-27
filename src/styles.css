@@ -19,7 +19,11 @@ html {
     padding: 0px;
 }
 
-a {
+.hover-element:hover {
+    cursor: pointer;
+}
+
+.menu-item {
     display: flex;
     text-decoration: none;
     color: var(--main-font-color);
@@ -28,19 +32,24 @@ a {
     gap: 10px;
 }
 
-a:not(.selected-link):hover {
+.menu-item:not(.selected-link):hover {
     border: 1px solid var(--selected-color);
     border-radius: 20px;
     transition: .3s;
 }
 
-
-
-.side-bar-header {
-    display: flex; 
+.side-bar-header,
+.project-header {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
-.push {
+.project-header {
+    padding-top: 20px;
+}
+
+.notification-icon {
     margin-left: auto;
     padding-right: 15px;
 }
@@ -62,11 +71,16 @@ a:not(.selected-link):hover {
     height: 100vh;
 }
 
-.menu {
+.menu,
+.project-list {
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
     font-weight: 300;
+}
+
+#add-project {
+    margin-left: auto;
+    padding-right: 10px; 
 }
 
 #user-name {
@@ -80,9 +94,11 @@ a:not(.selected-link):hover {
     grid-template-columns: 0.70fr 2fr;
 }
 
-.menu-item {
+.menu-item,
+.project-item {
     padding: 15px;
 }
+
 .selected-menu {
     color: var(--selected-color);
     background-color: var(--selected-background);
@@ -97,3 +113,4 @@ a:not(.selected-link):hover {
     font-weight: 500;
     font-size: 1.75em;
 }
+
