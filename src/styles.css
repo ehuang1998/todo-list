@@ -1,116 +1,227 @@
 :root {
-    font-family: 'Roboto', 'Open Sans', serif;
+  font-family: "Roboto", "Open Sans", serif;
 
-    --side-bar-color: #f7f7f7;
-    --main-font-color: black;
-    --selected-color: rgb(220,77,66);
-    --selected-background: rgb(252,241,229);
+  --side-bar-color: #f7f7f7;
+  --main-font-color: black;
+  --selected-color: rgb(220, 77, 66);
+  --selected-background: rgb(252, 241, 229);
 }
 
 * {
-     box-sizing: border-box;
-     margin: 0;
-     padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .hover-element:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .menu-item {
-    display: flex;
-    text-decoration: none;
-    color: var(--main-font-color);
-    border: 1px solid var(--side-bar-color);
-    font-size: 20px;
-    gap: 10px;
+  display: flex;
+  text-decoration: none;
+  color: var(--main-font-color);
+  border: 1px solid var(--side-bar-color);
+  font-size: 20px;
+  gap: 10px;
 }
 
 .menu-item:not(.selected-link):hover {
-    border: 1px solid var(--selected-color);
-    border-radius: 20px;
-    transition: .3s;
+  border: 1px solid var(--selected-color);
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
 .side-bar-header,
 .project-header {
-    display: flex;
-    padding-top: 10px;
-    padding-bottom: 20px;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .project-header {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .notification-icon {
-    margin-left: auto;
-    padding-right: 15px;
+  margin-left: auto;
+  padding-right: 15px;
 }
 
 .profile-pic {
-    width: 30px;
-    height: auto;
-    margin: 10px;
+  width: 30px;
+  height: auto;
+  margin: 10px;
 }
 
 .thumbnail-bar {
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
 .side-bar {
-    padding: 20px;
-    background-color: var(--side-bar-color);
-    color: var(--main-font-color);
-    height: 100vh;
+  padding: 20px;
+  background-color: var(--side-bar-color);
+  color: var(--main-font-color);
+  height: 100vh;
 }
 
 .menu,
 .project-list {
-    display: flex;
-    flex-direction: column;
-    font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
 }
 
 #add-project {
-    margin-left: auto;
-    padding-right: 10px; 
+  margin-left: auto;
+  padding-right: 10px;
 }
 
 #user-name {
-    font-size: 1.5em;
-    font-weight: 400;
-    align-content: center;
+  font-size: 1.5em;
+  font-weight: 400;
+  align-content: center;
 }
 
 #page-content {
-    display: grid;
-    grid-template-columns: 0.70fr 2fr;
+  display: grid;
+  grid-template-columns: 0.7fr 2fr;
 }
 
 .menu-item,
 .project-item {
-    padding: 15px;
+  padding: 15px;
 }
 
 .selected-menu {
-    color: var(--selected-color);
-    background-color: var(--selected-background);
-    border-radius: 20px;
+  color: var(--selected-color);
+  background-color: var(--selected-background);
+  border-radius: 20px;
 }
 
 .main-content {
-    padding: 75px;
+  padding: 75px;
 }
 
 .main-page-title {
-    font-weight: 500;
-    font-size: 1.75em;
+  font-weight: 500;
+  font-size: 1.75em;
 }
 
+#add-project-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 1rem;
+  width: 600px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: fadein;
+  animation-duration: 0.5s;
+  border-radius: 10px;
+}
+
+#form button[type="submit"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+#form button[type="submit"][id="submit"] {
+  background: var(--selected-color);
+  border: 0;
+  outline: 0;
+  color: #fefefe;
+}
+
+#form button[type="submit"][id="cancel"] {
+  background: white;
+  border-color: grey;
+  outline: 10px;
+  color: grey;
+}
+
+#form .modal-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.modal-title h1 {
+  color: var(--selected-color);
+  text-align: center;
+  padding: 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#form input[type="text"],
+#form input[type="date"],
+select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 0;
+  background-color: #f7f7f7;
+  font-size: 1rem;
+  outline: 0;
+}
+
+.dropdown {
+  position: absolute;
+  width: 200px;
+  border-radius: 5px;
+  margin-top: 0.3rem;
+  background: white;
+  top: 70px;
+  left: 195px;
+
+  transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  opacity: 0;
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown a:hover {
+  background-color: var(--selected-color);
+  color: white;
+}
+
+.show {
+  transform: translateY(0rem);
+  visibility: visible;
+  opacity: 1;
+}
